@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PlayerDto {
 
-	@Min(1)
     private int playerId;
 	
 	@NotNull(message = "Player name cannot be null")
@@ -24,7 +23,7 @@ public class PlayerDto {
 	
     @NotNull(message = "Jersey number is required")
     @Min(value = 1, message = "Jersey number must be at least 1")
-    @Max(value = 999, message = "Jersey number must be less than 1000")
+    @Max(value = 50, message = "Jersey number must be at most 50")
     private int jerseyNumber;
     
     @NotBlank(message = "Role is required")
@@ -45,6 +44,8 @@ public class PlayerDto {
     
     @Size(max = 1200, message = "Description cannot exceed 1200 characters")
     private String description;
+    
+    
 	
 	
 

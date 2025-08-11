@@ -13,5 +13,7 @@ public interface IPlayerService {
 	public String deletePlayer(int playerId);
 	
 	public List<Player> getAllPlayers();
+	
+	public Player getPlayerByJerseyNumber(int jerseyNumber);
 
 }

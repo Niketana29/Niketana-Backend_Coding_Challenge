@@ -62,4 +62,13 @@ public class PlayerServiceImpl implements IPlayerService {
         return playerRepo.findAll();
 	}
 
+	@Override
+	public Player getPlayerByJerseyNumber(int jerseyNumber) {
+		// TODO Auto-generated method stub
+	    log.debug("Service - getPlayerByJerseyNumber() called");
+	    
+		return playerRepo.findByJerseyNumber(jerseyNumber)
+	            .orElseThrow(() -> new ResourceNotFoundException(HttpStatus.NOT_FOUND, "Player not found with jersey number: " + jerseyNumber));
+	}
+
 }
